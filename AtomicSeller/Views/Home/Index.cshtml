@@ -1,0 +1,46 @@
+﻿@using AtomicSeller.Helpers
+@using AtomicSeller.Helpers.Navigation
+@using AtomicSeller.Helpers.Razor
+@using AtomicSeller.Helpers.Razor.HtmlExtensions
+@using AtomicSeller.Resources
+
+@{
+    ViewBag.Title = Local.TranslatedMessage("MITFAFquickProcessToolStripMenuItem");
+    ViewBag.ShowH2 = false;
+    ViewBag.PageCol = HtmlConsts.Dimens.DefaultPageCol;
+    ViewBag.PageColOffset = HtmlConsts.Dimens.DefaultPageColOffset;
+}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        @using (Html.PanelWrap("AtomicSeller"))
+        {
+        <div class="panel-body">
+            <p>Welcome</p>
+
+            <a href="@Url.Action("SendParcelData", "Home")"
+               class="btn btn-primary"
+               data-toggle="tooltip"
+               title="Get Orders">
+                <i class="mdi mdi-file-pdf-box"></i>Send Parcel Data
+            </a>
+
+            <a href="@Url.Action("GetShipmentLabel", "Home")"
+               class="btn btn-primary"
+               data-toggle="tooltip"
+               title="Get Products">
+                <i class="mdi mdi-file-pdf-box"></i>Get Labels
+            </a>
+
+
+            <a href="@Url.Action("GetTrackingNumber", "Home")"
+               class="btn btn-primary"
+               data-toggle="tooltip"
+               title="Get Products">
+                <i class="mdi mdi-file-pdf-box"></i>Get Tracking Numbers
+            </a>
+
+        </div>
+        }
+    </div>
+</div>
